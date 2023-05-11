@@ -1,0 +1,80 @@
+body{
+    background-color: rgb(158 158 158 / 53%);
+}
+
+.form-container{
+    display: flex;
+    margin: 20px auto;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 768px;
+    border-radius: 20px;
+    background-color: cornflowerblue;
+    padding: 50px 0 50px;
+}
+
+.form-container h2{
+    font-size: 26px;
+}
+
+.inputs-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#inputTask{
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#btnNewTask{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: #12d012;
+}
+
+.listcontainer{
+    display: flex;
+    margin: 30px auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    width: 768px;
+    gap: 15px;
+    background-color: white;
+    padding: 50px;
+}
+
+.div-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.removbtn{
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: crimson;
+    color: black !important;
+}
+
+li{
+    list-style: auto;
+}
+
+li span{
+    font-size: 18px;
+}
+
+.done{
+    color: #12d012;
+}
+
+
