@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(158 158 158 / 53%);
+    background-color: lightgrey;
 }
 
 .form-container{
@@ -11,7 +11,7 @@ body{
     gap: 20px;
     max-width: 768px;
     border-radius: 20px;
-    background-color: cornflowerblue;
+    background-color: white;
     padding: 50px 0 50px;
 }
 
@@ -21,21 +21,37 @@ body{
 
 .inputs-container{
     display: flex;
+    padding: 20px;
+    background-color: #ebebeb;
+    border-radius: 10px;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
 #inputTask{
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 5px;
 }
 
 #btnNewTask{
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid black;
-    background-color: #12d012;
+    border: 1px solid white;
+    background-color: dodgerblue;
+    cursor: pointer;
+}
+
+#btnNewTask:hover{
+    border: 1px solid white;
+    background-color: blue;
+    color: white;
+}
+
+.h1card{
+    padding: 10px;
+    background-color: #ebebeb;
+    border-radius: 10px;
 }
 
 .listcontainer{
@@ -53,28 +69,53 @@ body{
 
 .div-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
 }
+
 .removbtn{
     display: flex;
-    padding: 5px;
+    padding: 3px;
     border-radius: 5px;
-    background-color: crimson;
+    background-color: #eb5800;
     color: black !important;
+    cursor: pointer;
 }
-
-li{
-    list-style: auto;
+.removbtn:hover{
+    background-color: crimson;
+    border: 1px solid white;
 }
 
 li span{
     font-size: 18px;
 }
 
-.done{
-    color: #12d012;
+/*How giv background-color for list-style?*/
+
+.notdone{
+    color: black;
+    width: 500px;
+    max-width: 768px;
+    list-style: none;
+    background-color: #f6f3f3;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 185, 252, 0.81);
 }
+
+.notdone:hover{
+    padding: 15px;
+    transition: 0.7s;
+    cursor: pointer;
+}
+
+.done{
+    color: white;
+    background-color: dodgerblue;
+    opacity: 0.5;
+}
+
+
 
 
