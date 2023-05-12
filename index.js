@@ -4,6 +4,7 @@ let inputTask = document.getElementById('inputTask');
 let listcontainer = document.querySelector('.listcontainer');
 
 let tasks = [];
+localStorage.setItem('tasks', JSON.stringify(tasks));
 
 //Create function to render saved data from localstorage
 renderPage();
