@@ -6,6 +6,7 @@ let listcontainer = document.querySelector('.listcontainer');
 let tasks = [];
 
 //Create function to render saved data from localstorage
+
 renderPage();
 
 function renderPage() {
@@ -16,15 +17,22 @@ function renderPage() {
         div.classList.add('div-container');
         const checkbox = document.createElement('input');
         checkbox.classList.add('checked');
-        //how to take property of checkbox?
+
+        //how to render page with cheked checkbox and style
+
+
         checkbox.setAttribute('type', 'checkbox');
         const removbtn = document.createElement('button');
         removbtn.classList.add('removbtn');
         removbtn.setAttribute('data-action', 'delete')
         removbtn.textContent = 'delete';
+        const editbtn = document.createElement('button');
+        editbtn.classList.add('editbtn');
+        editbtn.setAttribute('data-action', 'edit')
+        editbtn.textContent = 'edit';
         const span = document.createElement('span');
         span.textContent = task.text;
-        div.append(span, checkbox, removbtn);
+        div.append(span, checkbox, editbtn, removbtn);
         const li = document.createElement('li');
         li.classList.add('notdone');
         li.setAttribute('id', `${task.id}`);
@@ -32,7 +40,6 @@ function renderPage() {
         listcontainer.append(li);
     });
 }
-
 
 //Create function addtask to listcontainer
 
@@ -42,7 +49,7 @@ function addTask(e) {
     e.preventDefault();
     let newTask = {
         text: inputTask.value,
-        checked: false,
+        status: false,
         id: Date.now(),
     }
     if (newTask.text === '') {
@@ -52,16 +59,19 @@ function addTask(e) {
         div.classList.add('div-container');
         const checkbox = document.createElement('input');
         checkbox.classList.add('checked');
-        //how to take property of checkbox?
         checkbox.setAttribute('type', 'checkbox');
         const removbtn = document.createElement('button');
         removbtn.classList.add('removbtn');
         removbtn.setAttribute('data-action', 'delete')
         removbtn.textContent = 'delete';
+        const editbtn = document.createElement('button');
+        editbtn.classList.add('editbtn');
+        editbtn.setAttribute('data-action', 'edit')
+        editbtn.textContent = 'edit';
         const span = document.createElement('span');
         span.textContent = newTask.text;
         span.setAttribute('id', `${newTask.id}`);
-        div.append(span, checkbox, removbtn);
+        div.append(span, checkbox, editbtn, removbtn);
         const li = document.createElement('li');
         li.classList.add('notdone');
         li.setAttribute('id', `${newTask.id}`);
@@ -92,31 +102,60 @@ listcontainer.addEventListener('click', doneTask);
 
 function doneTask(e) {
     if (e.target.checked === true) {
-        //how to check property of checkbox?
         const parenttag = e.target.closest('li');
-        parenttag.classList.toggle('done')
+        parenttag.classList.add('done');
+
+        //How to change key of status
+
+        // tasks = tasks.filter((task) => task.id !== id);
+        // localStorage.setItem('tasks', JSON.stringify(tasks));
+        // parenttag.remove()
+
+    } else if (e.target.checked === false){
+        const parenttag = e.target.closest('li');
+        parenttag.classList.remove('done');
     }
 }
 
 //crete function edit task
 
-// listcontainer.addEventListener('click', editTask);
+listcontainer.addEventListener('click', editTask);
 //
-// function editTask(e) {
-//     if (e.target.classList.contains('notdone')){
-//         const newInput = document.createElement('input')
-//         newInput.setAttribute('type', 'text');
-//         const parenttag = e.target.closest('span');
-//         const id = Number(parenttag.id);
-//         tasks.forEach((task) => {
-//             if (task.id === id){
-//                 parenttag.append(newInput);
-//                 task.text = newInput.value;
-//                 localStorage.setItem('tasks', JSON.stringify(tasks));
-//             }
-//         });
-//     }
-// }
+function editTask(e) {
+    if (e.target.dataset.action === 'edit') {
+        const newInput = document.createElement('input');
+        const editWindow = document.createElement('div');
+        const closebtn = document.createElement('button');
+        newInput.setAttribute('type', 'text');
+        editWindow.classList.add('modalwindow');
+        closebtn.textContent = 'X'
+        editWindow.append(newInput, closebtn);
+        listcontainer.append(editWindow);
+
+        //Need to add to placeholder of newinput value of parent span tag
+
+
+
+        //Need to make code for change parent span tag and chenge text key in objects
+
+        // const id = Number(parenttag.id);
+        // tasks.forEach((task) => {
+        //     if (task.id === id) {
+        //         parenttag.append(newInput);
+        //         task.text = newInput.value;
+        //         localStorage.setItem('tasks', JSON.stringify(tasks));
+        //     }
+        // });
+
+        //
+
+
+        //close button must close modal window
+
+
+
+    }
+}
 
 
 

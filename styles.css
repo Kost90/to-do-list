@@ -87,11 +87,41 @@ body{
     border: 1px solid white;
 }
 
+/*Edit*/
+
+.editbtn{
+    display: flex;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: #4b4beb;
+    color: black !important;
+    cursor: pointer;
+}
+.editbtn:hover{
+    background-color: green;
+    border: 1px solid white;
+}
+
+.modalwindow{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.7;
+    margin: 0 auto;
+    background-color: red;
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 2;
+}
+
 li span{
     font-size: 18px;
 }
 
-/*How giv background-color for list-style?*/
 
 .notdone{
     color: black;
