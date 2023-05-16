@@ -28,7 +28,9 @@ function renderPage() {
         editbtn.textContent = 'edit';
         const span = document.createElement('span');
         span.textContent = task.text;
-        div.append(span, checkbox, editbtn, removbtn);
+        span.setAttribute('id', `${task.id}`);
+        span.append(editbtn)
+        div.append(span, checkbox, removbtn);
         const li = document.createElement('li');
         li.setAttribute('id', `${task.id}`);
         li.append(div);
@@ -73,9 +75,9 @@ function addTask(e) {
         const span = document.createElement('span');
         span.textContent = newTask.text;
         span.setAttribute('id', `${newTask.id}`);
-        div.append(span, checkbox, editbtn, removbtn);
+        span.append(editbtn)
+        div.append(span, checkbox, removbtn);
         const li = document.createElement('li');
-        li.classList.add('notdone');
         li.setAttribute('id', `${newTask.id}`);
         li.append(div);
         listcontainer.append(li);
@@ -132,38 +134,42 @@ function doneTask(e) {
 
 listcontainer.addEventListener('click', editTask);
 
-//
+
 function editTask(e) {
     if (e.target.dataset.action === 'edit') {
         const newInput = document.createElement('input');
         const editWindow = document.createElement('div');
         const closebtn = document.createElement('button');
+        closebtn.classList.add('closebtn');
+        const changebtn = document.createElement('button');
+        changebtn.classList.add('changebtn');
+        const parenttag = e.target.closest('span');
+        const id = Number(parenttag.id);
         newInput.setAttribute('type', 'text');
         editWindow.classList.add('modalwindow');
+        changebtn.textContent = 'change'
         closebtn.textContent = 'X'
-        editWindow.append(newInput, closebtn);
+        editWindow.append(newInput, changebtn, closebtn);
         listcontainer.append(editWindow);
 
-        //Need to add to placeholder of newinput value of parent span tag
-
-
-        //Need to make code for change parent span tag and chenge text key in objects
-
-        // const id = Number(parenttag.id);
-        // tasks.forEach((task) => {
-        //     if (task.id === id) {
-        //         parenttag.append(newInput);
-        //         task.text = newInput.value;
-        //         localStorage.setItem('tasks', JSON.stringify(tasks));
-        //     }
-        // });
-
-        //
-
-
-        //close button must close modal window
-
-
+        changebtn.addEventListener('click', () =>{
+            tasks.forEach((task) => {
+                if (task.id === id) {
+                    const editbtn = document.createElement('button');
+                    editbtn.classList.add('editbtn');
+                    editbtn.setAttribute('data-action', 'edit')
+                    editbtn.textContent = 'edit';
+                    task.text = newInput.value;
+                    parenttag.textContent = `${task.text}`;
+                    parenttag.append(editbtn);
+                    editWindow.remove();
+                }
+            });
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        })
+        closebtn.addEventListener('click', () =>{
+            editWindow.remove();
+    })
     }
 }
 

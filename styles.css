@@ -69,9 +69,9 @@ body{
 
 .div-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 25px;
 }
 
 .removbtn{
@@ -136,31 +136,42 @@ li:hover{
 
 li span{
     font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
 }
-
-
-/*.notdone{*/
-/*    color: black;*/
-/*    width: 500px;*/
-/*    max-width: 768px;*/
-/*    list-style: none;*/
-/*    background-color: #f6f3f3;*/
-/*    padding: 10px;*/
-/*    border-radius: 10px;*/
-/*    border: 1px solid rgba(0, 185, 252, 0.81);*/
-/*}*/
-
-/*.notdone:hover{*/
-/*    padding: 15px;*/
-/*    transition: 0.7s;*/
-/*    cursor: pointer;*/
-/*}*/
 
 .done{
     color: white;
     background-color: dodgerblue;
     opacity: 0.5;
 }
+
+.changebtn{
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #23a923;
+}
+
+.closebtn{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    background-color: #f6f3f3;
+    color: red;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*Modal window*/
+
+/*Make good style*/
+
+
+/*Organize css file and js file*/
+
+
 
 
 
