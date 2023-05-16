@@ -17,10 +17,6 @@ function renderPage() {
         div.classList.add('div-container');
         const checkbox = document.createElement('input');
         checkbox.classList.add('checked');
-
-        //how to render page with cheked checkbox and style
-
-
         checkbox.setAttribute('type', 'checkbox');
         const removbtn = document.createElement('button');
         removbtn.classList.add('removbtn');
@@ -34,9 +30,15 @@ function renderPage() {
         span.textContent = task.text;
         div.append(span, checkbox, editbtn, removbtn);
         const li = document.createElement('li');
-        li.classList.add('notdone');
         li.setAttribute('id', `${task.id}`);
         li.append(div);
+        if (task.status === true) {
+            li.classList.add('done');
+            checkbox.checked = true;
+        } else if (task.status === false) {
+            li.classList.remove('done');
+            checkbox.checked = false;
+        }
         listcontainer.append(li);
     });
 }
@@ -97,6 +99,7 @@ function removeTask(e) {
     }
 }
 
+
 //create function done task
 listcontainer.addEventListener('click', doneTask);
 
@@ -104,22 +107,31 @@ function doneTask(e) {
     if (e.target.checked === true) {
         const parenttag = e.target.closest('li');
         parenttag.classList.add('done');
-
-        //How to change key of status
-
-        // tasks = tasks.filter((task) => task.id !== id);
-        // localStorage.setItem('tasks', JSON.stringify(tasks));
-        // parenttag.remove()
-
-    } else if (e.target.checked === false){
+        const id = Number(parenttag.id);
+        tasks.forEach((task) => {
+            if (task.id === id) {
+                task.status = true;
+            }
+        });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    } else if (e.target.checked === false) {
         const parenttag = e.target.closest('li');
         parenttag.classList.remove('done');
+        const id = Number(parenttag.id);
+        tasks.forEach((task) => {
+            if (task.id === id) {
+                task.status = false;
+            }
+        });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 }
+
 
 //crete function edit task
 
 listcontainer.addEventListener('click', editTask);
+
 //
 function editTask(e) {
     if (e.target.dataset.action === 'edit') {
@@ -133,7 +145,6 @@ function editTask(e) {
         listcontainer.append(editWindow);
 
         //Need to add to placeholder of newinput value of parent span tag
-
 
 
         //Need to make code for change parent span tag and chenge text key in objects
@@ -151,7 +162,6 @@ function editTask(e) {
 
 
         //close button must close modal window
-
 
 
     }

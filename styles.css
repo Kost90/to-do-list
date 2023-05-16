@@ -118,12 +118,7 @@ body{
     z-index: 2;
 }
 
-li span{
-    font-size: 18px;
-}
-
-
-.notdone{
+li{
     color: black;
     width: 500px;
     max-width: 768px;
@@ -133,12 +128,33 @@ li span{
     border-radius: 10px;
     border: 1px solid rgba(0, 185, 252, 0.81);
 }
-
-.notdone:hover{
+li:hover{
     padding: 15px;
     transition: 0.7s;
     cursor: pointer;
 }
+
+li span{
+    font-size: 18px;
+}
+
+
+/*.notdone{*/
+/*    color: black;*/
+/*    width: 500px;*/
+/*    max-width: 768px;*/
+/*    list-style: none;*/
+/*    background-color: #f6f3f3;*/
+/*    padding: 10px;*/
+/*    border-radius: 10px;*/
+/*    border: 1px solid rgba(0, 185, 252, 0.81);*/
+/*}*/
+
+/*.notdone:hover{*/
+/*    padding: 15px;*/
+/*    transition: 0.7s;*/
+/*    cursor: pointer;*/
+/*}*/
 
 .done{
     color: white;
