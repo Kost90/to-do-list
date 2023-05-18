@@ -1,5 +1,5 @@
 body{
-    background-color: lightgrey;
+    background-color: white;
 }
 
 .form-container{
@@ -11,8 +11,9 @@ body{
     gap: 20px;
     max-width: 768px;
     border-radius: 20px;
-    background-color: white;
+    background-color: ghostwhite;
     padding: 50px 0 50px;
+    border: 1px solid #a9a9a93b;
 }
 
 .form-container h2{
@@ -22,7 +23,6 @@ body{
 .inputs-container{
     display: flex;
     padding: 20px;
-    background-color: #ebebeb;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
@@ -30,8 +30,9 @@ body{
 }
 #inputTask{
     border-radius: 5px;
-    border: 1px solid white;
+    border: 1px solid #80808061;
     padding: 5px;
+    width: 500px;
 }
 
 #btnNewTask{
@@ -48,12 +49,6 @@ body{
     color: white;
 }
 
-.h1card{
-    padding: 10px;
-    background-color: #ebebeb;
-    border-radius: 10px;
-}
-
 .listcontainer{
     display: flex;
     margin: 30px auto;
@@ -63,75 +58,33 @@ body{
     border-radius: 20px;
     width: 768px;
     gap: 15px;
-    background-color: white;
+    background-color: ghostwhite;
+    border: 1px solid #a9a9a93b;
     padding: 50px;
 }
 
 .div-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 25px;
 }
 
-.removbtn{
-    display: flex;
-    padding: 3px;
-    border-radius: 5px;
-    background-color: #eb5800;
-    color: black !important;
-    cursor: pointer;
-}
-.removbtn:hover{
-    background-color: crimson;
-    border: 1px solid white;
-}
-
-/*Edit*/
-
-.editbtn{
-    display: flex;
-    padding: 3px;
-    border-radius: 5px;
-    background-color: #4b4beb;
-    color: black !important;
-    cursor: pointer;
-}
-.editbtn:hover{
-    background-color: green;
-    border: 1px solid white;
-}
-
-.modalwindow{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    opacity: 0.7;
-    margin: 0 auto;
-    background-color: red;
-    width: 300px;
-    height: 200px;
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 2;
-}
-
 li{
     color: black;
-    width: 500px;
+    width: 100%;
     max-width: 768px;
     list-style: none;
-    background-color: #f6f3f3;
+    background-color: white;
     padding: 10px;
     border-radius: 10px;
-    border: 1px solid rgba(0, 185, 252, 0.81);
+    border: 1px solid #a9a9a93b;
 }
 li:hover{
     padding: 15px;
     transition: 0.7s;
     cursor: pointer;
+    background-color: rgba(193, 229, 248, 0.51);
 }
 
 li span{
@@ -144,14 +97,87 @@ li span{
 
 .done{
     color: white;
-    background-color: dodgerblue;
+    background-color: lightgreen;
     opacity: 0.5;
+}
+.done:hover{
+    background-color: lightgreen;
+    padding: 15px;
+    transition: 0.7s;
+    cursor: pointer;
+    color: black;
+}
+
+.editbtn{
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: cornflowerblue;
+    color: black !important;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.editbtn:hover{
+    background-color: #047fff;
+    border: 1px solid white;
+    color: white !important;
+}
+
+.removbtn{
+    display: flex;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: rgba(255, 0, 0, 0.66);
+    color: white !important;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+}
+.removbtn:hover{
+    background-color: red;
+    border: 1px solid white;
+}
+
+/*Edit*/
+
+
+.modalwindow{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    margin: 0 auto;
+    background-color: #96c5e9;
+    width: 660px;
+    height: 275px;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.modalwindow input{
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .changebtn{
     border-radius: 5px;
     cursor: pointer;
-    background-color: #23a923;
+    background-color: #2fe42f;
+    padding: 10px;
+    color: antiquewhite;
+}
+
+.changebtn:hover{
+    transition: 0.7s;
+    background-color: lightgreen;
+    padding: 15px;
 }
 
 .closebtn{
@@ -159,20 +185,17 @@ li span{
     top: 5px;
     right: 5px;
     padding: 5px;
-    background-color: #f6f3f3;
-    color: red;
+    background-color: #ff4646;
+    color: white;
     border-radius: 5px;
     cursor: pointer;
 }
-/*Modal window*/
 
-/*Make good style*/
-
-
-/*Organize css file and js file*/
-
-
-
-
+.closebtn:hover{
+    transition: 0.7s;
+    background-color: red;
+    border: 1px solid white;
+    padding: 10px;
+}
 
 

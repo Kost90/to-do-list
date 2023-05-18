@@ -1,11 +1,11 @@
-// Create variables with html tags
+// variables with html tags
 let btnNewTask = document.getElementById('btnNewTask');
 let inputTask = document.getElementById('inputTask');
 let listcontainer = document.querySelector('.listcontainer');
 
 let tasks = [];
 
-//Create function to render saved data from localstorage
+//function to render saved data from localstorage
 
 renderPage();
 
@@ -21,7 +21,7 @@ function renderPage() {
         const removbtn = document.createElement('button');
         removbtn.classList.add('removbtn');
         removbtn.setAttribute('data-action', 'delete')
-        removbtn.textContent = 'delete';
+        removbtn.textContent = 'x';
         const editbtn = document.createElement('button');
         editbtn.classList.add('editbtn');
         editbtn.setAttribute('data-action', 'edit')
@@ -45,7 +45,7 @@ function renderPage() {
     });
 }
 
-//Create function addtask to listcontainer
+//function addtask to listcontainer
 
 btnNewTask.addEventListener('click', addTask);
 
@@ -67,7 +67,7 @@ function addTask(e) {
         const removbtn = document.createElement('button');
         removbtn.classList.add('removbtn');
         removbtn.setAttribute('data-action', 'delete')
-        removbtn.textContent = 'delete';
+        removbtn.textContent = 'x';
         const editbtn = document.createElement('button');
         editbtn.classList.add('editbtn');
         editbtn.setAttribute('data-action', 'edit')
@@ -87,7 +87,7 @@ function addTask(e) {
     }
 }
 
-//create function delete task
+//function delete task
 
 listcontainer.addEventListener('click', removeTask);
 
@@ -102,7 +102,7 @@ function removeTask(e) {
 }
 
 
-//create function done task
+//function done task
 listcontainer.addEventListener('click', doneTask);
 
 function doneTask(e) {
@@ -130,7 +130,7 @@ function doneTask(e) {
 }
 
 
-//crete function edit task
+//function edit task
 
 listcontainer.addEventListener('click', editTask);
 
