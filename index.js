@@ -10,6 +10,9 @@ let tasks = [];
 renderPage();
 
 function renderPage() {
+    if (tasks === null){
+        return
+    }
     let tasksData = localStorage.getItem('tasks');
     tasks = JSON.parse(tasksData);
     tasks.forEach((task) => {
