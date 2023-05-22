@@ -12,40 +12,41 @@ renderPage();
 function renderPage() {
     if (!tasks.length){
         return console.log(`array is empty`);
+    } else {
+        let tasksData = localStorage.getItem('tasks');
+        tasks = JSON.parse(tasksData);
+        tasks.forEach((task) => {
+            const div = document.createElement('div');
+            div.classList.add('div-container');
+            const checkbox = document.createElement('input');
+            checkbox.classList.add('checked');
+            checkbox.setAttribute('type', 'checkbox');
+            const removbtn = document.createElement('button');
+            removbtn.classList.add('removbtn');
+            removbtn.setAttribute('data-action', 'delete')
+            removbtn.textContent = 'x';
+            const editbtn = document.createElement('button');
+            editbtn.classList.add('editbtn');
+            editbtn.setAttribute('data-action', 'edit')
+            editbtn.textContent = 'edit';
+            const span = document.createElement('span');
+            span.textContent = task.text;
+            span.setAttribute('id', `${task.id}`);
+            span.append(editbtn)
+            div.append(span, checkbox, removbtn);
+            const li = document.createElement('li');
+            li.setAttribute('id', `${task.id}`);
+            li.append(div);
+            if (task.status === true) {
+                li.classList.add('done');
+                checkbox.checked = true;
+            } else if (task.status === false) {
+                li.classList.remove('done');
+                checkbox.checked = false;
+            }
+            listcontainer.append(li);
+        });
     }
-    let tasksData = localStorage.getItem('tasks');
-    tasks = JSON.parse(tasksData);
-    tasks.forEach((task) => {
-        const div = document.createElement('div');
-        div.classList.add('div-container');
-        const checkbox = document.createElement('input');
-        checkbox.classList.add('checked');
-        checkbox.setAttribute('type', 'checkbox');
-        const removbtn = document.createElement('button');
-        removbtn.classList.add('removbtn');
-        removbtn.setAttribute('data-action', 'delete')
-        removbtn.textContent = 'x';
-        const editbtn = document.createElement('button');
-        editbtn.classList.add('editbtn');
-        editbtn.setAttribute('data-action', 'edit')
-        editbtn.textContent = 'edit';
-        const span = document.createElement('span');
-        span.textContent = task.text;
-        span.setAttribute('id', `${task.id}`);
-        span.append(editbtn)
-        div.append(span, checkbox, removbtn);
-        const li = document.createElement('li');
-        li.setAttribute('id', `${task.id}`);
-        li.append(div);
-        if (task.status === true) {
-            li.classList.add('done');
-            checkbox.checked = true;
-        } else if (task.status === false) {
-            li.classList.remove('done');
-            checkbox.checked = false;
-        }
-        listcontainer.append(li);
-    });
 }
 
 //function addtask to listcontainer
