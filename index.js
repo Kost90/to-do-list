@@ -11,7 +11,7 @@ renderPage();
 
 function renderPage() {
     if (tasks === null){
-        return
+        return false
     }
     let tasksData = localStorage.getItem('tasks');
     tasks = JSON.parse(tasksData);
