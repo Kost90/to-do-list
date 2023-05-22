@@ -10,7 +10,7 @@ let tasks = [];
 renderPage();
 
 function renderPage() {
-    if (!tasks.length){
+    if (!tasks.length === true){
         return console.log(`array is empty`);
     } else {
         let tasksData = localStorage.getItem('tasks');
