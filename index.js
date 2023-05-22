@@ -11,7 +11,7 @@ renderPage();
 
 function renderPage() {
     if (!tasks.length){
-        return
+        return console.log(`array is empty`);
     }
     let tasksData = localStorage.getItem('tasks');
     tasks = JSON.parse(tasksData);
