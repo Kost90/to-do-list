@@ -4,31 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./app/styles/reset.css">
+    <link rel="stylesheet" href="./app/styles/styles.css">
     <title>Document</title>
 </head>
 <body>
-
-<div class="form-container">
-    <h2>TO - DO LIST</h2>
-    <form id="form">
-        <div class="inputs-container">
-            <input type="text" id="inputTask" placeholder="Write a task">
-            <button id="btnNewTask">Add new task</button>
-        </div>
-    </form>
-</div>
-
-
-<ul class="listcontainer">
-    <div class="h1card">
-        <h1>TASKS FOR TODAY</h1>
+    <div class="wrapper">
+      <div class="app" id="app"></div>
     </div>
-
-</ul>
-
-
-<script src="index.js"></script>
+    <script type="module" src="./index.js"></script>
 </body>
 </html>
