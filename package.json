@@ -1,0 +1,30 @@
+{
+  "name": "todo_list",
+  "version": "1.0.0",
+  "description": "1. Создать хелперсы - функцию обощенную для функций по созданию нод элементов (ui).\r 2. компонент по удалению задачи.\r 3. компонент по добавлению задачи.\r 4. создать сервер.\r 5. Отредактировать локал сторэдж.\r 6. Запаковать в вэб пак.\r 7. alis делаю",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx webpack --mode production",
+    "start": "npx webpack-dev-server --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kost90/to-do-list.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kost90/to-do-list/issues"
+  },
+  "homepage": "https://github.com/Kost90/to-do-list#readme",
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
